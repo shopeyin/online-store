@@ -8,7 +8,9 @@ const Header = () => {
           <span class="header-primary--main">Men Fashion</span>
           <span class="header-primary--sub">get your exquisite wears</span>
         </h1>
-        <button className="btn">View our wears</button>
+        <a href="#" className="btn btn-text">
+          View more wears &rarr;
+        </a>
       </div>
     </header>
   );

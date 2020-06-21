@@ -1,5 +1,5 @@
 import React from "react";
-import photo from "./photo.jpg";
+
 import Header from "../header/Header.component";
 import Gallery from "../gallery/Gallery.component";
 import TrendyImages from "../trendyImages/TrendyImages.component";

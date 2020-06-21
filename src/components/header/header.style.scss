@@ -1,8 +1,9 @@
 .header {
   background-image: linear-gradient(
-      to right bottom,
-      rgba(245, 240, 237, 0.1),
-      rgba(253, 247, 247, 0.1)
+      105deg,
+      transparent 50%,
+      rgba(245, 245, 237, 0.965) 60%,
+      rgba(255, 255, 255, 1)
     ),
     url(../../img/photo-8.jpg);
   background-size: cover;
@@ -30,6 +31,31 @@
     &--sub {
       display: block;
       font-size: 2rem;
+    }
+  }
+
+  .btn-text {
+    &:link,
+    &:visited {
+      font-size: 1.6rem;
+      display: inline-block;
+      color: green;
+      text-decoration: none;
+      border-bottom: 1px solid green;
+      padding: 3px;
+      transition: all 0.2s;
+    }
+
+    &:hover {
+      background-color: green;
+      color: #fff;
+      box-shadow: 0 1rem 2rem rgba(253, 247, 247, 0.1);
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      box-shadow: 0 0.5rem 1rem rgba(253, 247, 247, 0.1);
+      transform: translateY(0);
     }
   }
 }
