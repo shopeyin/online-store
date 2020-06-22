@@ -1,5 +1,4 @@
 import React from "react";
-
 import Header from "../header/Header.component";
 import Gallery from "../gallery/Gallery.component";
 import TrendyImages from "../trendyImages/TrendyImages.component";

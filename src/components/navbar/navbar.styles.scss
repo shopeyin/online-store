@@ -1,197 +1,150 @@
-// .container {
-//   background-color: #eee;
-//   width: 1000px;
-//   margin: 30px auto;
-//   color: white;
+.navigation {
+  &__checkbox {
+    display: none;
+  }
 
-//   display: grid;
-//   grid-template-rows: repeat(2, 150px);
-//   grid-template-columns: repeat(2, 1fr);
-//   grid-gap: 30px;
+  &__button {
+    background-color: blanchedalmond;
+    height: 7rem;
+    width: 7rem;
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    border-radius: 50%;
+    z-index: 2000;
+    box-shadow: 0 1rem 3rem rgba(#000, 0.1);
+    text-align: center;
+    cursor: pointer;
+  }
 
-//   grid-auto-rows: 80px;
+  &__background {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 6.5rem;
+    right: 6.5rem;
+    background-image: radial-gradient(#7ed56f, #28b485);
+    z-index: 1000;
+    transition: transform 0.8s;
 
-//   align-items: center;
-//   justify-items: center;
+    //transform: scale(80);
+  }
 
-//   .item {
-//     padding: 10px;
-//     color: white;
-//     background-color: red;
+  &__nav {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1500;
 
-//     // ALIGN GRID ITEMS TO GRID AREAS
+    opacity: 0;
+    width: 0;
+    transition: all 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
 
-//     &--1 {
-//       align-self: start;
-//       justify-self: start;
-//     }
+  &__list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+    text-align: center;
+    width: 100%;
+  }
 
-//     &--2 {
-//       align-self: start;
-//       justify-self: end;
-//     }
+  &__item {
+    margin: 1rem;
+  }
 
-//     &--4 {
-//       background-color: crimson;
-//       grid-row: 2 / span 3;
-//       align-self: flex-start;
-//     }
+  &__link {
+    &:link,
+    &:visited {
+      display: inline-block;
+      font-size: 3rem;
+      font-weight: 300;
+      padding: 1rem 2rem;
+      color: black;
+      text-decoration: none;
+      text-transform: uppercase;
+      background-image: linear-gradient(
+        120deg,
+        transparent 0%,
+        transparent 50%,
+        #fff 50%
+      );
+      background-size: 230%;
+      transition: all 0.4s;
 
-//     &--7 {
-//       background-color: crimson;
-//       grid-column: 1/ -1;
-//     }
-//   }
-// }
-
-// .container {
-//   background-color: #eee;
-//   width: 1000px;
-//   margin: 30px auto;
-//   color: blue;
-
-//   display: grid;
-//   // grid-template-rows: repeat(2, 150px);
-//   // grid-template-columns: repeat(2, 1fr);
-//   grid-gap: 30px;
-
-//   grid-auto-rows: 80px;
-//   grid-auto-flow: row dense;
-//   grid-auto-columns: 0.5fr;
-
-//   // align-items: center;
-//   // justify-items: center;
-
-//   // ALIGN GRID TRACKS TO  GRID CUSTOMER
-//   grid-template-columns: repeat(2, 200px);
-//   grid-template-rows: repeat(2, 100px);
-//   height: 1000px;
-//   justify-content: center;
-//   align-content: center;
-
-//   .item {
-//     padding: 10px;
-//     color: blue;
-//     background-color: red;
-
-//     &--1 {
-//     }
-
-//     &--2 {
-//     }
-
-//     &--4 {
-//       background-color: crimson;
-//       grid-row: 2 / span 3;
-//       align-self: flex-start;
-//     }
-
-//     &--7 {
-//       background-color: crimson;
-//       grid-column: 1/ -1;
-//     }
-//   }
-// }
-
-// USING MIN-CONTENT/MAAX-CONTENT AND MIN-MAX FUNCTION
-
-// .container {
-//   background-color: #eee;
-//   width: 1000px;
-//   margin: 30px auto;
-//   color: blue;
-
-//   display: grid;
-//   // grid-template-rows: repeat(2, 150px);
-//   // grid-template-rows: repeat(2, min-content);
-//   // grid-template-columns: min-content 1fr 1fr max-content;
-//   grid-template-columns: max-content 1fr 1fr max-content;
-//   grid-template-rows: repeat(2, minmax(150px, min-content));
-//   .item {
-//     padding: 10px;
-//     color: blue;
-//     background-color: red;
-
-//     &--1 {
-//       background-color: royalblue;
-//     }
-
-//     &--2 {
-//       background-color: violet;
-//     }
-//     &--3 {
-//       background-color: yellowgreen;
-//     }
-
-//     &--4 {
-//       background-color: purple;
-//     }
-//     &--5 {
-//       background-color: powderblue;
-//     }
-
-//     &--6 {
-//       background-color: blueviolet;
-//     }
-
-//     &--7 {
-//       background-color: green;
-//     }
-//     &--8 {
-//       background-color: indigo;
-//     }
-//   }
-// }
-
-// using auto-fill and auto-fit
-
-.container {
-  background-color: #eee;
-  width: 1000px;
-  margin: 30px auto;
-  color: blue;
-
-  display: grid;
-  grid-template-rows: repeat(2, minmax(150px, min-content));
-  grid-template-columns: repeat(auto-fill, 100px);
-  grid-template-columns: repeat(auto-fit, 100px);
-
-  width: 90%;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-auto-rows: 150px;
-
-  .item {
-    padding: 10px;
-    color: blue;
-    background-color: red;
-
-    &--1 {
-      background-color: royalblue;
+      span {
+        margin-right: 1.5rem;
+        display: inline-block;
+      }
     }
 
-    &--2 {
-      background-color: violet;
+    &:hover,
+    &:active {
+      background-position: 100%;
+      transform: translateX(1rem);
     }
-    &--3 {
-      background-color: yellowgreen;
+  }
+
+  //FUNCTIONALITY
+  &__checkbox:checked ~ &__background {
+    transform: scale(80);
+  }
+
+  &__checkbox:checked ~ &__nav {
+    opacity: 1;
+    width: 100%;
+  }
+
+  &__icon {
+    position: relative;
+    margin-top: 3.5rem;
+    &,
+    &::before,
+    &::after {
+      width: 3rem;
+      height: 2px;
+      background-color: black;
+      display: inline-block;
     }
 
-    &--4 {
-      background-color: purple;
-    }
-    &--5 {
-      background-color: powderblue;
-    }
-
-    &--6 {
-      background-color: blueviolet;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all 0.2s;
     }
 
-    &--7 {
-      background-color: green;
+    &::before {
+      top: -0.8rem;
     }
-    &--8 {
-      background-color: indigo;
+    &::after {
+      top: 0.8rem;
     }
+  }
+
+  &__button:hover &__icon::before {
+    top: -1rem;
+  }
+
+  &__button:hover &__icon::after {
+    top: 1rem;
+  }
+  &__checkbox:checked + &__button &__icon {
+    background-color: transparent;
+  }
+
+  &__checkbox:checked + &__button &__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  &__checkbox:checked + &__button &__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
   }
 }

@@ -5,8 +5,8 @@ const Header = () => {
     <header className="header">
       <div className="header__text-box">
         <h1 className="header-primary">
-          <span class="header-primary--main">Men Fashion</span>
-          <span class="header-primary--sub">get your exquisite wears</span>
+          <span className="header-primary--main">Men Fashion</span>
+          <span className="header-primary--sub">get your exquisite wears</span>
         </h1>
         <a href="#" className="btn btn-text">
           View more wears &rarr;

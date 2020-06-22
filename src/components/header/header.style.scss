@@ -9,9 +9,10 @@
   background-size: cover;
   background-position: top;
   padding: 2rem;
-
+  display: -ms-grid;
   grid-column: full-start / full-end;
   display: grid;
+  -ms-grid-rows: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
 
   grid-template-columns: minmax(min-content, max-content);

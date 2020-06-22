@@ -6,21 +6,6 @@
   // grid-template-columns: repeat(4, 1fr);
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
 
-  // img {
-  //   max-width: 100%;
-  //   height: 19rem;
-  //   object-fit: contain;
-  //   object-position: center;
-  // }
-
-  // .image {
-  //   width: 100%;
-  //   height: 95%;
-  //   background-size: cover;
-  //   background-position: center;
-  //   margin-bottom: 5px;
-  // }
-
   .images {
     max-width: 100%;
 
@@ -31,6 +16,7 @@
     background-color: #95dada;
     border: 1px solid grey;
     border-radius: 5px;
+    box-shadow: 0 1.5rem 4rem rgba($color: #000000, $alpha: 0.15);
     padding: 25px;
     cursor: pointer;
     -moz-osx-font-smoothing: grayscale;
