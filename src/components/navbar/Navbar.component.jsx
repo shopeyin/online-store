@@ -30,10 +30,10 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="navigation__item">
-            <a href="#" className="navigation__link">
+            <Link className="navigation__link" to="/signup">
               <span>03</span>
-              SignUp
-            </a>
+              Signup
+            </Link>
           </li>
           <li className="navigation__item">
             <a href="#" className="navigation__link">

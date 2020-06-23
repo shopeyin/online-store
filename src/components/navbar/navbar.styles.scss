@@ -17,15 +17,17 @@
     text-align: center;
     cursor: pointer;
 
-    @include respond(tab-port) {
+    @media screen and (max-width: 56.25em) {
       top: 4rem;
       right: 4rem;
     }
-    @include respond(phone) {
+
+    @media screen and (max-width: 37.5em) {
       top: 3rem;
       right: 3rem;
     }
-    @include respond(small-phone) {
+
+    @media screen and (max-width: 25em) {
       top: 2rem;
       right: 2rem;
     }
