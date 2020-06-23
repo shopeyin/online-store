@@ -1,6 +1,5 @@
 .body-container {
   display: grid;
-  
   grid-template-rows: 90vh repeat(3, min-content) 200px;
   grid-template-columns:
     [full-start] 1fr [center-start] repeat(
@@ -10,4 +9,3 @@
     [center-end]
     1fr [full-end];
 }
-

@@ -130,7 +130,7 @@ const TrendyImages = () => {
         ></div>
         <div className="btn-container">
           <button className="btn">ADD TO CART</button>
-        </div>  
+        </div>
         <div className="images-footer">
           <span className="name"> Puma </span>
           <span className="price"> $100 </span>

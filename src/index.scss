@@ -9,7 +9,6 @@
 // 1em = 16px
 // 400/16 = 25em
 
-
 @mixin respond($breakpoint) {
   // 400px
   @if $breakpoint == small-phone {
@@ -29,6 +28,14 @@
       @content;
     }
   }
+
+  @if $breakpoint == tab-grid {
+    // 1100px
+    @media (max-width: 68.75em) {
+      @content;
+    }
+  }
+
   @if $breakpoint == tab-landscape {
     // 1200px
     @media (max-width: 75em) {
