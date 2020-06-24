@@ -5,7 +5,6 @@ const Footer = () => {
     <footer className="footer">
       <div className="foot">
         <p className="address">
-          <h3>Address</h3>
           Suspendisse sed <br /> accumsan risus. Curabitur, <br /> elit vel
           tincidunt elementum, <br /> nunc urna tristique nisi, <br /> in
           adipiscing varius. <br /> Vestibulum dolor lorem.
@@ -13,7 +12,6 @@ const Footer = () => {
       </div>
       <div className="foot">
         <p className="address">
-          <h3>Address</h3>
           Suspendisse sed <br /> accumsan risus. Curabitur, <br /> elit vel
           tincidunt elementum, <br /> nunc urna tristique nisi, <br /> in
           adipiscing varius. <br /> Vestibulum dolor lorem.
@@ -21,7 +19,6 @@ const Footer = () => {
       </div>
       <div className="foot">
         <p className="address">
-          <h3>Address</h3>
           Suspendisse sed <br /> accumsan risus. Curabitur, <br /> elit vel
           tincidunt elementum, <br /> nunc urna tristique nisi, <br /> in
           adipiscing varius. <br /> Vestibulum dolor lorem.
@@ -29,7 +26,6 @@ const Footer = () => {
       </div>
       <div className="foot">
         <p className="address">
-          <h3>Address</h3>
           Suspendisse sed <br /> accumsan risus. Curabitur, <br /> elit vel
           tincidunt elementum, <br /> nunc urna tristique nisi, <br /> in
           adipiscing varius. <br /> Vestibulum dolor lorem.

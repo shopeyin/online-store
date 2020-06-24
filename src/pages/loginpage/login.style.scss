@@ -113,6 +113,10 @@
           border: none;
           cursor: pointer;
           background-color: green;
+
+          animation-name: moveInBottom;
+          animation-duration: 1s;
+          animation-timing-function: ease-out;
         }
 
         .login__header {
@@ -121,7 +125,58 @@
             color: green;
           }
         }
+
+        #password {
+          animation-name: moveInLeft;
+          animation-duration: 2s;
+          animation-timing-function: ease-out;
+        }
+        #email {
+          animation-name: moveInTop;
+          animation-duration: 1s;
+          animation-timing-function: ease-out;
+        }
       }
+    }
+  }
+
+  @keyframes moveInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-10rem);
+    }
+
+    80% {
+      transform: translateX(1rem);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+
+  @keyframes moveInBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(3rem);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+
+  @keyframes moveInTop {
+    0% {
+      opacity: 0;
+      transform: translateY(-2rem);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translate(0);
     }
   }
 }

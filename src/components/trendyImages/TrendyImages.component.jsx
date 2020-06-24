@@ -1,143 +1,70 @@
-import React from "react";
+import React, { Component } from "react";
 import "./trendyImages.style.scss";
-import photo1 from "../../img/photo1.jpg";
-import photo3 from "../../img/photo3.jpg";
-import photo5 from "../../img/photo5.jpg";
-import photo6 from "../../img/photo6.jpg";
-const TrendyImages = () => {
-  return (
-    <section className="trendy-images">
-      <figure>
-        {" "}
-        <div
-          className="images"
-          style={{
-            backgroundImage: `url(${photo1})`,
-          }}
-        ></div>
-        <div className="btn-container">
-          <button className="btn">ADD TO CART</button>
-        </div>
-        <div className="images-footer">
-          <span className="name"> Puma </span>
-          <span className="price"> $100 </span>
-        </div>
-      </figure>
+import MenuItem from "../menuItem/MenuItem.component";
 
-      <figure>
-        {" "}
-        <div
-          className="images"
-          style={{
-            backgroundImage: `url(${photo3})`,
-          }}
-        ></div>
-        <div className="btn-container">
-          <button className="btn">ADD TO CART</button>
-        </div>
-        <div className="images-footer">
-          <span className="name"> Puma </span>
-          <span className="price"> $100 </span>
-        </div>
-      </figure>
-      <figure>
-        {" "}
-        <div
-          className="images"
-          style={{
-            backgroundImage: `url(${photo5})`,
-          }}
-        ></div>
-        <div className="btn-container">
-          <button className="btn">ADD TO CART</button>
-        </div>
-        <div className="images-footer">
-          <span className="name"> Puma </span>
-          <span className="price"> $100 </span>
-        </div>
-      </figure>
-      <figure>
-        {" "}
-        <div
-          className="images"
-          style={{
-            backgroundImage: `url(${photo6})`,
-          }}
-        ></div>
-        <div className="btn-container">
-          <button className="btn">ADD TO CART</button>
-        </div>
-        <div className="images-footer">
-          <span className="name"> Puma </span>
-          <span className="price"> $100 </span>
-        </div>
-      </figure>
-      <figure>
-        {" "}
-        <div
-          className="images"
-          style={{
-            backgroundImage: `url(${photo6})`,
-          }}
-        ></div>
-        <div className="btn-container">
-          <button className="btn">ADD TO CART</button>
-        </div>
-        <div className="images-footer">
-          <span className="name"> Puma </span>
-          <span className="price"> $100 </span>
-        </div>
-      </figure>
-      <figure>
-        {" "}
-        <div
-          className="images"
-          style={{
-            backgroundImage: `url(${photo3})`,
-          }}
-        ></div>
-        <div className="btn-container">
-          <button className="btn">ADD TO CART</button>
-        </div>
-        <div className="images-footer">
-          <span className="name"> Puma </span>
-          <span className="price"> $100 </span>
-        </div>
-      </figure>
-      <figure>
-        {" "}
-        <div
-          className="images"
-          style={{
-            backgroundImage: `url(${photo5})`,
-          }}
-        ></div>
-        <div className="btn-container">
-          <button className="btn">ADD TO CART</button>
-        </div>
-        <div className="images-footer">
-          <span className="name"> Puma </span>
-          <span className="price"> $100 </span>
-        </div>
-      </figure>
-      <figure>
-        {" "}
-        <div
-          className="images"
-          style={{
-            backgroundImage: `url(${photo1})`,
-          }}
-        ></div>
-        <div className="btn-container">
-          <button className="btn">ADD TO CART</button>
-        </div>
-        <div className="images-footer">
-          <span className="name"> Puma </span>
-          <span className="price"> $100 </span>
-        </div>
-      </figure>
-    </section>
-  );
-};
+class TrendyImages extends Component {
+  constructor() {
+    super();
+    this.state = {
+      sections: [
+        {
+          title: "hats",
+          imageUrl: "https://i.ibb.co/cvpntL1/hats.png",
+          id: 1,
+          linkUrl: "shop/hats",
+        },
+        {
+          title: "jackets",
+          imageUrl: "https://i.ibb.co/px2tCc3/jackets.png",
+          id: 2,
+          linkUrl: "shop/jackets",
+        },
+        {
+          title: "sneakers",
+          imageUrl: "https://i.ibb.co/0jqHpnp/sneakers.png",
+          id: 3,
+          linkUrl: "shop/sneakers",
+        },
+        {
+          title: "womens",
+          imageUrl: "https://i.ibb.co/GCCdy8t/womens.png",
+          size: "large",
+          id: 4,
+          linkUrl: "shop/womens",
+        },
+        {
+          title: "mens",
+          imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
+          size: "large",
+          id: 5,
+          linkUrl: "shop/mens",
+        },
+      ],
+    };
+  }
+  render() {
+    const { sections } = this.state;
+    return (
+      <div className="trendy-images">
+        {sections.map(({ title, imageUrl, id, size, linkUrl }) => {
+          return (
+            // <MenuItem
+            //   key={section.id}
+            //   title={section.title}
+            //   imageUrl={section.imageUrl}
+            // />
+            <MenuItem
+              key={id}
+              title={title}
+              imageUrl={imageUrl}
+              size={size}
+              linkUrl={linkUrl}
+            />
+          );
+        })}
+      </div>
+    );
+  }
+}
 
 export default TrendyImages;
