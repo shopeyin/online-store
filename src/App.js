@@ -7,6 +7,7 @@ import Body from "./components/body/Body.component";
 import HomePage from "./pages/homepage/Homepage.component";
 import LoginPage from "./pages/loginpage/LoginPage.component";
 import SignUpPage from "./pages/signuppage/SignUpPage.component";
+import ShopPage from "./pages/shoppage/ShopPage.component";
 import Footer from "./components/footer/Footer.component";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/" component={HomePage} />
         <Route path="/login" component={LoginPage} />
         <Route path="/signup" component={SignUpPage} />
+        <Route path="/shop" component={ShopPage} />
       </Switch>
     </div>
   );

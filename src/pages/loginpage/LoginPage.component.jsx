@@ -1,6 +1,7 @@
 import React from "react";
 import "./login.style.scss";
-const LoginPage = () => {
+const LoginPage = (props) => {
+  console.log("this" + props);
   return (
     <div className="login-container">
       <div className="login__background">

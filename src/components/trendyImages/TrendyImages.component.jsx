@@ -46,20 +46,14 @@ class TrendyImages extends Component {
     const { sections } = this.state;
     return (
       <div className="trendy-images">
-        {sections.map(({ title, imageUrl, id, size, linkUrl }) => {
+        {sections.map(({ id, ...otherSectionProps }) => {
           return (
             // <MenuItem
             //   key={section.id}
             //   title={section.title}
             //   imageUrl={section.imageUrl}
             // />
-            <MenuItem
-              key={id}
-              title={title}
-              imageUrl={imageUrl}
-              size={size}
-              linkUrl={linkUrl}
-            />
+            <MenuItem key={id} {...otherSectionProps} />
           );
         })}
       </div>

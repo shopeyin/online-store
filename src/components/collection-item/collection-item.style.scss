@@ -1,0 +1,12 @@
+.collection__item {
+  .collection__figure {
+    height: 30rem;
+    background-position: center;
+    background-size: cover;
+  }
+
+  figcaption {
+    display: flex;
+    justify-content: space-between;
+  }
+}
