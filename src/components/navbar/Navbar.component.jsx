@@ -26,11 +26,15 @@ const Navbar = ({ currentUser }) => {
           </li>
           <li className="navigation__item">
             {currentUser ? (
-              <div className="navigation__link" onClick={() => auth.signOut()}>
-                <span>02</span>
+              <Link
+                className="navigation__link"
+                to="/"
+                onClick={() => auth.signOut()}
+              >
+                <span className="navigation__link">02</span>
                 Logout
-                {currentUser.displayName}
-              </div>
+                {/* {currentUser.displayName} */}
+              </Link>
             ) : (
               <Link className="navigation__link" to="/login">
                 <span>02</span>

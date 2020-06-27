@@ -49,18 +49,19 @@
       display: grid;
 
       width: 100%;
-      grid-template-rows: repeat(6, 100px);
+      grid-template-rows: repeat(6, 5rem);
       grid-template-columns: repeat(12, 1fr);
 
       .form {
         grid-row: 2/ 4;
         grid-column: 2 /6;
+
         @media screen and (max-width: 37.5em) {
           grid-column: 2 / 12;
         }
 
         &__group:not(:last-child) {
-          margin-bottom: 2rem;
+          margin-bottom: 1rem;
         }
         &__input {
           font-size: 1.5rem;

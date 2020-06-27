@@ -75,7 +75,7 @@ class LoginPage extends React.Component {
                   Password
                 </label>
               </div>
-              <div className="form__group">
+              <div className="form__group btn-group">
                 <button className="btn" type="submit">
                   Submit &rarr;
                 </button>
