@@ -29,6 +29,7 @@ const Navbar = ({ currentUser }) => {
               <div className="navigation__link" onClick={() => auth.signOut()}>
                 <span>02</span>
                 Logout
+                {currentUser.displayName}
               </div>
             ) : (
               <Link className="navigation__link" to="/login">

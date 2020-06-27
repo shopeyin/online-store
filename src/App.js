@@ -2,7 +2,10 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { Route, Switch, Redirect } from "react-router-dom";
-import { auth } from "./components/firebase/firebase.utils";
+import {
+  auth,
+  createUserProfileDocument,
+} from "./components/firebase/firebase.utils";
 import Navbar from "./components/navbar/Navbar.component";
 
 import HomePage from "./pages/homepage/Homepage.component";
@@ -23,12 +26,25 @@ class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged((user) => {
-      this.setState({ currentUser: user });
-      console.log(user.displayName);
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
+      if (userAuth) {
+        const userRef = await createUserProfileDocument(userAuth);
+
+        userRef.onSnapshot((snapShot) => {
+          this.setState({
+            currentUser: {
+              id: snapShot.id,
+              ...snapShot.data(),
+            },
+          });
+          console.log(this.state);
+        });
+      }
+      this.setState({
+        currentUser: userAuth,
+      });
     });
   }
-
   componentWillUnmount() {
     this.unsubscribeFromAuth();
   }
@@ -36,7 +52,6 @@ class App extends React.Component {
   render() {
     const { currentUser } = this.state;
     console.log(currentUser);
-    // `console.log(`this is ${currentUser.displayName}`);`
     return (
       <div className="App">
         <Navbar currentUser={currentUser} />
