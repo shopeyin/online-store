@@ -1,5 +1,7 @@
 import React from "react";
 import "./header.style.scss";
+import CartIcon from "../cart-icon/cart-icon.component";
+import CartDropdown from "../cart-dropdown/Cart-dropdown.component";
 const Header = () => {
   return (
     <header className="header">
@@ -12,6 +14,7 @@ const Header = () => {
           View more wears &rarr;
         </a>
       </div>
+     
     </header>
   );
 };

@@ -1,7 +1,9 @@
 import React from "react";
 import "./navbar.styles.scss";
 import { auth } from "../../components/firebase/firebase.utils";
-import { Link } from "react-router-dom";
+
+import { connect } from "react-redux";
+import { Link, NavLink } from "react-router-dom";
 const Navbar = ({ currentUser }) => {
   return (
     <div className="navigation">
@@ -19,10 +21,10 @@ const Navbar = ({ currentUser }) => {
       <nav className="navigation__nav">
         <ul className="navigation__list">
           <li className="navigation__item">
-            <Link className="navigation__link" to="/">
+            <NavLink className="navigation__link" activeClassName="" to="/">
               <span>01</span>
               Home
-            </Link>
+            </NavLink>
           </li>
           <li className="navigation__item">
             {currentUser ? (
@@ -36,23 +38,32 @@ const Navbar = ({ currentUser }) => {
                 {/* {currentUser.displayName} */}
               </Link>
             ) : (
-              <Link className="navigation__link" to="/login">
-                <span>02</span>
-                Login
-              </Link>
+              <li>
+                <Link className="navigation__link" to="/login">
+                  <span>02</span>
+                  Login
+                </Link>
+                <li className="navigation__item">
+                  <Link className="navigation__link" to="/signup">
+                    <span>03</span>
+                    Signup
+                  </Link>
+                </li>
+              </li>
             )}
           </li>
-          <li className="navigation__item">
+          {/* <li className="navigation__item">
             <Link className="navigation__link" to="/signup">
               <span>03</span>
               Signup
             </Link>
-          </li>
+          </li> */}
+
           <li className="navigation__item">
-            <a href="#" className="navigation__link">
-              <span>04</span>
-              About
-            </a>
+            <Link className="navigation__link" to="/shop">
+              <span>03</span>
+              Shop
+            </Link>
           </li>
         </ul>
       </nav>
@@ -60,4 +71,8 @@ const Navbar = ({ currentUser }) => {
   );
 };
 
-export default Navbar;
+const mapStateToProps = (state) => ({
+  currentUser: state.user.currentUser,
+});
+
+export default connect(mapStateToProps)(Navbar);

@@ -64,7 +64,7 @@
     height: 100vh;
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     z-index: 1500;
 
     opacity: 0;
@@ -175,5 +175,9 @@
   &__checkbox:checked + &__button &__icon::after {
     top: 0;
     transform: rotate(-135deg);
+  }
+
+  .dis {
+    color: red;
   }
 }

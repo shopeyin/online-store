@@ -35,6 +35,7 @@ class SignUpPage extends React.Component {
       );
 
       await createUserProfileDocument(user, { displayName });
+      console.log(`this is ${user} and ${displayName}`);
 
       this.setState({
         displayName: "",
