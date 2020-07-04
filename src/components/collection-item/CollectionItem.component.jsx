@@ -20,7 +20,12 @@ const CollectionItem = ({ item, addItem }) => {
         <span className="price">${price}</span>
       </figcaption>
       <div className="collection__item-button">
-        <button onClick={() => addItem(item)}>Add to cart</button>
+        <button onClick={() => addItem(item)} className="btn btn-white">
+          Add to cart
+        </button>
+        {/* <a href="#" onClick={() => addItem(item)} className="btn btn-white">
+          Add to Cart
+        </a> */}
       </div>
     </div>
   );

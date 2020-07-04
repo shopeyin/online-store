@@ -33,44 +33,44 @@
     }
   }
 
-  &__background {
-    height: 6rem;
-    width: 6rem;
-    border-radius: 50%;
-    position: fixed;
-    top: 6rem;
-    right: 6rem;
-    background-image: radial-gradient(#7ed56f, #28b485);
-    z-index: 1000;
-    transition: transform 0.8s;
+  // &__background {
+  //   height: 6rem;
+  //   width: 6rem;
+  //   border-radius: 50%;
+  //   position: fixed;
+  //   top: 6rem;
+  //   right: 6rem;
+  //   background-image: radial-gradient(#7ed56f, #28b485);
+  //   z-index: 1000;
+  //   transition: transform 0.8s;
 
-    @include respond(tab-port) {
-      top: 4.5rem;
-      right: 4.5rem;
-    }
+  //   @include respond(tab-port) {
+  //     top: 4.5rem;
+  //     right: 4.5rem;
+  //   }
 
-    @include respond(phone) {
-      top: 3.5rem;
-      right: 3.5rem;
-    }
+  //   @include respond(phone) {
+  //     top: 3.5rem;
+  //     right: 3.5rem;
+  //   }
 
-    @include respond(small-phone) {
-      top: 2.5rem;
-      right: 2.5rem;
-    }
-  }
+  //   @include respond(small-phone) {
+  //     top: 2.5rem;
+  //     right: 2.5rem;
+  //   }
+  // }
 
-  &__nav {
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 1500;
+  // &__nav {
+  //   height: 100vh;
+  //   position: fixed;
+  //   top: 0;
+  //   right: 0;
+  //   z-index: 1500;
 
-    opacity: 0;
-    width: 0;
-    transition: all 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  }
+  //   opacity: 0;
+  //   width: 0;
+  //   transition: all 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  // }
 
   &__list {
     position: absolute;
@@ -119,14 +119,14 @@
   }
 
   //FUNCTIONALITY
-  &__checkbox:checked ~ &__background {
-    transform: scale(80);
-  }
+  // &__checkbox:checked ~ &__background {
+  //   transform: scale(80);
+  // }
 
-  &__checkbox:checked ~ &__nav {
-    opacity: 1;
-    width: 100%;
-  }
+  // &__checkbox:checked ~ &__nav {
+  //   opacity: 1;
+  //   width: 100%;
+  // }
 
   &__icon {
     position: relative;
@@ -176,8 +176,52 @@
     top: 0;
     transform: rotate(-135deg);
   }
+}
 
-  .dis {
-    color: red;
+.navigation__checkbox:checked ~ .navigation__background {
+  transform: scale(80);
+}
+
+.navigation__checkbox:checked ~ .navigation__nav {
+  opacity: 1;
+  width: 100%;
+}
+
+.navigation__nav {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1500;
+
+  opacity: 0;
+  width: 0;
+  transition: all 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.navigation__background {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 6rem;
+  right: 6rem;
+  background-image: radial-gradient(#7ed56f, #28b485);
+  z-index: 1000;
+  transition: transform 0.8s;
+
+  @include respond(tab-port) {
+    top: 4.5rem;
+    right: 4.5rem;
+  }
+
+  @include respond(phone) {
+    top: 3.5rem;
+    right: 3.5rem;
+  }
+
+  @include respond(small-phone) {
+    top: 2.5rem;
+    right: 2.5rem;
   }
 }

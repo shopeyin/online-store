@@ -40,7 +40,7 @@ class LoginPage extends React.Component {
 
   render() {
     return (
-      <div className="login-container">
+      <div className="login__container">
         <div className="login__background">
           <div className="login__form">
             <form onSubmit={this.handleSubmit} className="form">
@@ -80,7 +80,7 @@ class LoginPage extends React.Component {
                   Submit &rarr;
                 </button>
                 <button className="btn" onClick={signInWithGoogle}>
-                  Sign In with Googgle &rarr;
+                  Google Sign In &rarr;
                 </button>
               </div>
             </form>
