@@ -20,6 +20,7 @@ const CartDropdown = ({ cartItems, history, dispatch }) => {
         )}
       </div>
       <button
+        className="btn btn-white"
         onClick={() => {
           history.push("/checkout");
           dispatch(toggleCartHidden());

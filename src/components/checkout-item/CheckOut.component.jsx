@@ -11,26 +11,30 @@ import "./checkout.style.scss";
 const CheckoutItem = ({ cartItem, clearItem, addItem, removeItem }) => {
   const { name, imageUrl, price, quantity } = cartItem;
   return (
-    <div className="checkout-item">
-      <div className="image-container">
-        <img src={imageUrl} alt="item" />
-      </div>
-      <span className="name">{name}</span>
-
-      <span className="quantity">
-        <div className="arrow" onClick={() => removeItem(cartItem)}>
+    <tr>
+      <td className="image__container">
+        {" "}
+        <img src={imageUrl} alt="item" class="img-fluid" width="100" />
+      </td>
+      <td className="name">{name}</td>
+      <td className="quantity">
+        <span className="arrow" onClick={() => removeItem(cartItem)}>
           &#10094;
-        </div>
+        </span>
         <span className="value">{quantity}</span>
-        <div className="arrow" onClick={() => addItem(cartItem)}>
+        <span className="arrow" onClick={() => addItem(cartItem)}>
           &#10095;
-        </div>
-      </span>
-      <span className="price">{price}</span>
-      <div className="remove-button" onClick={() => clearItem(cartItem)}>
+        </span>
+      </td>
+      <td className="price">{price}</td>
+      <td
+        id="remove"
+        className="remove__button"
+        onClick={() => clearItem(cartItem)}
+      >
         &#10006;
-      </div>
-    </div>
+      </td>
+    </tr>
   );
 };
 

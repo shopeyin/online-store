@@ -23,9 +23,7 @@ const CollectionItem = ({ item, addItem }) => {
         <button onClick={() => addItem(item)} className="btn btn-white">
           Add to cart
         </button>
-        {/* <a href="#" onClick={() => addItem(item)} className="btn btn-white">
-          Add to Cart
-        </a> */}
+        
       </div>
     </div>
   );

@@ -1,42 +1,97 @@
-.checkout-page {
-  width: 55%;
-  min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 50px auto 0;
+.checkout__page {
+  display: grid;
 
-  .checkout-header {
-    width: 100%;
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid darkgrey;
+  grid-template-rows: repeat(6, 11rem);
+  grid-template-columns: repeat(12, 1fr);
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
 
-    .header-block {
-      text-transform: capitalize;
-      width: 23%;
+  .checkout__table {
+    grid-row: 2/5;
+    grid-column: 2/12;
 
-      &:last-child {
-        width: 8%;
-      }
+    .remove__button {
+      padding-left: 12px;
+      cursor: pointer;
+    }
+    .arrow {
+      cursor: pointer;
+      padding: 1rem;
     }
   }
 
-  .total {
-    margin-top: 30px;
-    margin-left: auto;
-    font-size: 36px;
-  }
-  button {
-    margin-left: auto;
-    margin-top: 5rem;
-  }
+  .total__container {
+    grid-row: 5/6;
+    grid-column: 2/12;
 
-  .test-warning {
-    text-align: center;
-    margin-top: 4rem;
-    font-size: 2rem;
-    color: red;
+    .total {
+      text-align: right;
+      margin-top: 30px;
+      margin-left: auto;
+      font-size: 36px;
+    }
+
+    .test__warning {
+      text-align: center;
+      margin-top: 4rem;
+      font-size: 2rem;
+      color: red;
+    }
+
+    .stripe__btn {
+      text-align: right;
+      margin-top: -1rem;
+    }
   }
 }
+
+// display: grid;
+//   padding: 3rem 3rem 0rem 3rem;
+//   grid-template-rows: 50px 1fr;
+//   grid-template-columns: repeat(4, 1fr);
+
+//   grid-row-gap: 1rem;
+//   grid-column-gap: 3rem;
+
+// .checkout-page {
+//   width: 55%;
+//   min-height: 90vh;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   margin: 50px auto 0;
+
+//   .checkout-header {
+//     width: 100%;
+//     padding: 10px 0;
+//     display: flex;
+//     justify-content: space-between;
+//     border-bottom: 1px solid darkgrey;
+
+//     .header-block {
+//       text-transform: capitalize;
+//       width: 23%;
+
+//       &:last-child {
+//         width: 8%;
+//       }
+//     }
+//   }
+
+//   .total {
+//     margin-top: 30px;
+//     margin-left: auto;
+//     font-size: 36px;
+//   }
+//   button {
+//     margin-left: auto;
+//     margin-top: 5rem;
+//   }
+
+//   .test-warning {
+//     text-align: center;
+//     margin-top: 4rem;
+//     font-size: 2rem;
+//     color: red;
+//   }
+// }

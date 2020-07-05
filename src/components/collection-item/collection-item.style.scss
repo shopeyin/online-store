@@ -14,10 +14,11 @@
     outline: none;
     text-decoration: none;
     text-transform: uppercase;
-    padding: 1rem 3rem;
+    padding: 3px 10px;
     display: inline-block;
     border-radius: 10px;
     transition: all 0.2s;
+    cursor: pointer;
 
     &:hover {
       transform: translateY(-3px);
