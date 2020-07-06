@@ -90,7 +90,7 @@ class Navbar extends React.Component {
                       onClick={() => this.unCheck(i)}
                       to="/shop"
                     >
-                      <span>03</span>
+                      <span>04</span>
                       Shop
                     </Link>
                   </li>

@@ -1,10 +1,8 @@
 .checkout__page {
   display: grid;
 
-  grid-template-rows: repeat(6, 11rem);
+  grid-template-rows: repeat(7, 11rem);
   grid-template-columns: repeat(12, 1fr);
-  overflow-y: hidden; /* Hide vertical scrollbar */
-  overflow-x: hidden; /* Hide horizontal scrollbar */
 
   .checkout__table {
     grid-row: 2/5;
@@ -26,9 +24,9 @@
 
     .total {
       text-align: right;
-      margin-top: 30px;
+      margin-top: 3rem;
       margin-left: auto;
-      font-size: 36px;
+      font-size: 3rem;
     }
 
     .test__warning {
@@ -40,7 +38,6 @@
 
     .stripe__btn {
       text-align: right;
-      margin-top: -1rem;
     }
   }
 }

@@ -76,8 +76,6 @@ body {
   box-sizing: border-box;
   font-size: 1.5rem;
   padding: 2rem;
-  overflow-y: hidden; /* Hide vertical scrollbar */
-  overflow-x: hidden; /* Hide horizontal scrollbar */
 
   @include respond(tab-port) {
     // 1rem = 8px , 8/16 =50% width<900
