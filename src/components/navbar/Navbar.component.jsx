@@ -57,7 +57,7 @@ class Navbar extends React.Component {
                         }}
                       >
                         <span className="navigation__link">02</span>
-                        Logout
+                        Logout <br />
                         {this.props.currentUser.displayName}
                       </Link>
                     ) : (

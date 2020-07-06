@@ -4,9 +4,10 @@ import ic from "../../img/ic.png";
 import ic1 from "../../img/ic1.png";
 import ic2 from "../../img/ic2.png";
 import ic3 from "../../img/ic3.png";
+import { BrandContainer } from "./brand.styles";
 const Brand = () => {
   return (
-    <aside className="brand">
+    <BrandContainer>
       <figure className="images">
         <img src={ic} alt="Photo" />
       </figure>
@@ -22,7 +23,7 @@ const Brand = () => {
         {" "}
         <img src={ic3} alt="Photo" />
       </figure>
-    </aside>
+    </BrandContainer>
   );
 };
 
