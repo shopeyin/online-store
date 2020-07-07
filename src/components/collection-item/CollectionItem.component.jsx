@@ -5,7 +5,7 @@ import { addItem } from "../../redux/cart/cart.action";
 
 const CollectionItem = ({ item, addItem }) => {
   // console.log(item);
-  console.log(addItem);
+  // console.log(addItem);
   const { name, price, imageUrl } = item;
   return (
     <div className="collection__item">
@@ -23,7 +23,6 @@ const CollectionItem = ({ item, addItem }) => {
         <button onClick={() => addItem(item)} className="btn btn-white">
           Add to cart
         </button>
-        
       </div>
     </div>
   );
