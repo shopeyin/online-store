@@ -1,6 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
+import CollectionPreview from "../collection-preview/CollectionPreview.component";
 
 const config = {
   apiKey: "AIzaSyCmbk9nDHPvm1WZVxDe_B-SgZiJMWI8_gU",
@@ -37,6 +38,20 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     }
   }
   return userRef;
+};
+
+export const addCollectionAndDocuments = async (
+  CollectionKey,
+  objectsToAdd
+) => {
+  const collectionRef = firestore.collection(CollectionKey);
+
+  const batch = firestore.batch();
+  objectsToAdd.forEach((obj) => {
+    const newDocRef = collectionRef.doc();
+    batch.set(newDocRef, obj);
+  });
+  return await batch.commit();
 };
 
 firebase.initializeApp(config);

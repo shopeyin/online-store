@@ -23,7 +23,8 @@ import {
   selectCartItems,
 } from "../src/redux/cart/cart.selectors";
 import { selectCurrentUser } from "../src/redux/user/user.selectors";
-
+import { selectCollectionsForPreview } from "../src/redux/shop/shop.selectors";
+import { Lines } from "react-preloaders";
 class App extends React.Component {
   unsubscribeFromAuth = null;
 
@@ -52,6 +53,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <Lines />
         <CartIcon />
         {this.props.hidden ? null : <CartDropdown />}
 
