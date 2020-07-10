@@ -18,11 +18,12 @@ class Navbar extends React.Component {
   }
 
   render() {
+    const { currentUser } = this.props;
     return (
       <div className="navigation">
         {[1].map((item, i) => {
           return (
-            <div>
+            <div key={i}>
               <input
                 type="checkbox"
                 className="navigation__checkbox"
@@ -38,7 +39,6 @@ class Navbar extends React.Component {
                   <li className="navigation__item">
                     <NavLink
                       className="navigation__link"
-                      activeClassName=""
                       to="/"
                       onClick={() => this.unCheck(i)}
                     >
@@ -46,7 +46,57 @@ class Navbar extends React.Component {
                       Home
                     </NavLink>
                   </li>
+                  {currentUser ? (
+                    <li className="navigation__item">
+                      <Link
+                        className="navigation__link"
+                        to="/login"
+                        onClick={() => {
+                          auth.signOut();
+                          this.unCheck(i);
+                        }}
+                      >
+                        <span>02</span>
+                        LOGOUT <br />
+                        {currentUser.displayName}
+                      </Link>
+                    </li>
+                  ) : (
+                    <div>
+                      <li className="navigation__item">
+                        <Link
+                          className="navigation__link"
+                          to="/login"
+                          onClick={() => this.unCheck(i)}
+                        >
+                          <span>02</span>
+                          LOGIN
+                        </Link>
+                      </li>
+
+                      <li className="navigation__item">
+                        <Link
+                          className="navigation__link"
+                          to="/signup"
+                          onClick={() => this.unCheck(i)}
+                        >
+                          <span>03</span>
+                          SIGNUP
+                        </Link>
+                      </li>
+                    </div>
+                  )}
                   <li className="navigation__item">
+                    <Link
+                      className="navigation__link"
+                      onClick={() => this.unCheck(i)}
+                      to="/shop"
+                    >
+                      <span>04</span>
+                      Shop
+                    </Link>
+                  </li>
+                  {/* <li className="navigation__item">
                     {this.props.currentUser ? (
                       <Link
                         className="navigation__link"
@@ -93,7 +143,7 @@ class Navbar extends React.Component {
                       <span>04</span>
                       Shop
                     </Link>
-                  </li>
+                  </li> */}
                 </ul>
               </nav>
             </div>

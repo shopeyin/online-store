@@ -21,9 +21,10 @@
 
   .collection__title {
     display: grid;
-
+    font-weight: bolder;
     grid-column: 1/ -1;
     align-items: flex-end;
     padding: 5px;
+    cursor: pointer;
   }
 }

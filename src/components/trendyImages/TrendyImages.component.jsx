@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./trendyImages.style.scss";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
@@ -7,7 +7,7 @@ import MenuItem from "../menuItem/MenuItem.component";
 
 const TrendyImages = ({ sections }) => {
   return (
-    <div className="trendy-images">
+    <div className="trendy-images" id="trendy_images">
       {sections.map(({ id, ...otherSectionProps }) => {
         return (
           // <MenuItem

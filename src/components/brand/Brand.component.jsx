@@ -9,19 +9,19 @@ const Brand = () => {
   return (
     <BrandContainer>
       <figure className="images">
-        <img src={ic} alt="Photo" />
+        <img src={ic} alt="fila_logo" />
       </figure>
       <figure className="images">
         {" "}
-        <img src={ic1} alt="Photo" />
+        <img src={ic1} alt="reebok_logo" />
       </figure>
       <figure className="images">
         {" "}
-        <img src={ic2} alt="Photo" />
+        <img src={ic2} alt="puma_logo" />
       </figure>
       <figure className="images">
         {" "}
-        <img src={ic3} alt="Photo" />
+        <img src={ic3} alt="adidas_logo" />
       </figure>
     </BrandContainer>
   );

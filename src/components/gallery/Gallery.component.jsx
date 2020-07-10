@@ -9,11 +9,11 @@ const Gallery = () => {
         <div className="card">
           <div className="card__side card__side--front">
             <div className="card__picture card__picture--1">
-              <img src={photo2} alt="Photo" />
+              <img src={photo2} alt="img" />
             </div>
             <div className="card__details">
               <ul>
-                <li>Name of the cloth</li>
+                <li>Gucci</li>
               </ul>
             </div>
           </div>
@@ -35,11 +35,11 @@ const Gallery = () => {
         <div className="card">
           <div className="card__side card__side--front">
             <div className="card__picture card__picture--2">
-              <img src={photo2} alt="Photo" />
+              <img src={photo2} alt="img" />
             </div>
             <div className="card__details">
               <ul>
-                <li>Name of the cloth</li>
+                <li>Nike</li>
               </ul>
             </div>
           </div>
@@ -61,11 +61,11 @@ const Gallery = () => {
         <div className="card">
           <div className="card__side card__side--front">
             <div className="card__picture card__picture--3">
-              <img src={photo3} alt="Photo" />
+              <img src={photo3} alt="img" />
             </div>
             <div className="card__details">
               <ul>
-                <li>Name of the cloth</li>
+                <li>Prada</li>
               </ul>
             </div>
           </div>

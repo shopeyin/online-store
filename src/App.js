@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import { Route, Switch, Redirect } from "react-router-dom";
 import {
@@ -13,17 +12,13 @@ import LoginPage from "./pages/loginpage/LoginPage.component";
 import SignUpPage from "./pages/signuppage/SignUpPage.component";
 import CheckoutPage from "./pages/checkout/CheckoutPage.component";
 import ShopPage from "./pages/shoppage/ShopPage.component";
-import Footer from "./components/footer/Footer.component";
+
 import { setCurrentUser } from "./redux/user/user.action";
 import CartIcon from "../src/components/cart-icon/cart-icon.component";
 import { createStructuredSelector } from "reselect";
 import CartDropdown from "../src/components/cart-dropdown/Cart-dropdown.component";
-import {
-  selectCartHidden,
-  selectCartItems,
-} from "../src/redux/cart/cart.selectors";
+import { selectCartHidden } from "../src/redux/cart/cart.selectors";
 import { selectCurrentUser } from "../src/redux/user/user.selectors";
-import { selectCollectionsForPreview } from "../src/redux/shop/shop.selectors";
 import { Lines } from "react-preloaders";
 class App extends React.Component {
   unsubscribeFromAuth = null;
@@ -53,10 +48,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Lines />
+        <Lines animation="slide" />
         <CartIcon />
         {this.props.hidden ? null : <CartDropdown />}
-
         <Navbar />
         <Switch>
           <Route exact path="/" component={HomePage} />

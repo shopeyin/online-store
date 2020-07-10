@@ -1,7 +1,6 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
-import CollectionPreview from "../collection-preview/CollectionPreview.component";
 
 const config = {
   apiKey: "AIzaSyCmbk9nDHPvm1WZVxDe_B-SgZiJMWI8_gU",
@@ -53,8 +52,6 @@ export const addCollectionAndDocuments = async (
   });
   return await batch.commit();
 };
-
-
 
 export const convertCollectionsSnapshotToMap = (collections) => {
   const transformedCollection = collections.docs.map((doc) => {

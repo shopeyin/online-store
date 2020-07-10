@@ -52,6 +52,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 
   @include respond(tab-landscape) {
     // 1rem = 9px, 9/16 = 56.25% width<1200
