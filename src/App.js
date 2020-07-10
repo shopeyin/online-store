@@ -50,7 +50,9 @@ class App extends React.Component {
       <div className="App">
         <Lines animation="slide" />
         <CartIcon />
+
         {this.props.hidden ? null : <CartDropdown />}
+
         <Navbar />
         <Switch>
           <Route exact path="/" component={HomePage} />
