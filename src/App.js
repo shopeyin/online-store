@@ -48,7 +48,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Lines animation="slide" />
+        <Lines />
         <CartIcon />
 
         {this.props.hidden ? null : <CartDropdown />}
