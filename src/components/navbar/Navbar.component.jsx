@@ -2,7 +2,7 @@ import React from "react";
 import "./navbar.styles.scss";
 
 import { auth } from "../../components/firebase/firebase.utils";
-
+import { signOutStart } from "../../redux/user/user.action";
 import { connect } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 
@@ -18,7 +18,7 @@ class Navbar extends React.Component {
   }
 
   render() {
-    const { currentUser } = this.props;
+    const { currentUser, signOutStart } = this.props;
     return (
       <div className="navigation">
         {[1].map((item, i) => {
@@ -52,8 +52,8 @@ class Navbar extends React.Component {
                         className="navigation__link"
                         to="/login"
                         onClick={() => {
-                          auth.signOut();
                           this.unCheck(i);
+                          signOutStart();
                         }}
                       >
                         <span>02</span>
@@ -158,4 +158,8 @@ const mapStateToProps = (state) => ({
   currentUser: state.user.currentUser,
 });
 
-export default connect(mapStateToProps)(Navbar);
+const mapDispatchToProps = (dispatch) => ({
+  signOutStart: () => dispatch(signOutStart()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

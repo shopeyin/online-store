@@ -13,39 +13,26 @@ import SignUpPage from "./pages/signuppage/SignUpPage.component";
 import CheckoutPage from "./pages/checkout/CheckoutPage.component";
 import ShopPage from "./pages/shoppage/ShopPage.component";
 
-import { setCurrentUser } from "./redux/user/user.action";
 import CartIcon from "../src/components/cart-icon/cart-icon.component";
 import { createStructuredSelector } from "reselect";
 import CartDropdown from "../src/components/cart-dropdown/Cart-dropdown.component";
 import { selectCartHidden } from "../src/redux/cart/cart.selectors";
 import { selectCurrentUser } from "../src/redux/user/user.selectors";
+import { checkUserSession } from "../src/redux/user/user.action";
 import { Lines } from "react-preloaders";
 class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    const { setCurrentUser } = this.props;
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
-      if (userAuth) {
-        const userRef = await createUserProfileDocument(userAuth);
-
-        userRef.onSnapshot((snapShot) => {
-          setCurrentUser({
-            id: snapShot.id,
-            ...snapShot.data(),
-          });
-
-          // console.log(this.state);
-        });
-      }
-      setCurrentUser(userAuth);
-    });
+    const { checkUserSession } = this.props;
+    checkUserSession();
   }
   componentWillUnmount() {
     this.unsubscribeFromAuth();
   }
 
   render() {
+    console.log(`this is the ${this.props.currentUser}`);
     return (
       <div className="App">
         <Lines />
@@ -95,7 +82,7 @@ const mapStateToProps = createStructuredSelector({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+  checkUserSession: () => dispatch(checkUserSession()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

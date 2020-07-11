@@ -1,6 +1,7 @@
 import React from "react";
 import "./signup.style.scss";
-
+import { connect } from "react-redux";
+import { signUpStart, signOutStart } from "../../redux/user/user.action";
 import {
   auth,
   createUserProfileDocument,
@@ -20,7 +21,7 @@ class SignUpPage extends React.Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
-
+    const { signUpStart } = this.props;
     const { displayName, email, password, confirmPassword } = this.state;
 
     if (password !== confirmPassword) {
@@ -28,24 +29,7 @@ class SignUpPage extends React.Component {
       return;
     }
 
-    try {
-      const { user } = await auth.createUserWithEmailAndPassword(
-        email,
-        password
-      );
-
-      await createUserProfileDocument(user, { displayName });
-      console.log(`this is ${user} and ${displayName}`);
-
-      this.setState({
-        displayName: "",
-        email: "",
-        password: "",
-        confirmPassword: "",
-      });
-    } catch (error) {
-      console.error(error);
-    }
+    signUpStart({ displayName, email, password });
   };
 
   handleChange = (event) => {
@@ -136,4 +120,8 @@ class SignUpPage extends React.Component {
   }
 }
 
-export default SignUpPage;
+const mapDispatchToProps = (dispatch) => ({
+  signUpStart: (userCredentials) => dispatch(signUpStart(userCredentials)),
+});
+
+export default connect(null, mapDispatchToProps)(SignUpPage);
